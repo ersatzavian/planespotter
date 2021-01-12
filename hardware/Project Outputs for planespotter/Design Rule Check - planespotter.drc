@@ -1,0 +1,71 @@
+Protel Design System Design Rule Check
+PCB File : Z:\hw-tom\projects\planespotter\planespotter.PcbDoc
+Date     : 6/10/2015
+Time     : 2:19:24 PM
+
+Processing Rule : Width Constraint (Min=49.00ohms) (Max=51.00ohms) (Preferred=50.00ohms) (InNetClass('50_OHM'))
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=10mil) (All),(IsThruPin and (not PadIsPlated))
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=30mil) (InNamedPolygon('TopGndPour') OR InNamedPolygon('BtmGndPour')),((InDifferentialPairClass('All Differential Pairs')))
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=5mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=7mil) (Max=50mil) (Preferred=10mil) (All)
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=1mil) (Max=250mil) (All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=10mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Silk To Solder Mask (Clearance=5mil) (IsPad),(All)
+Rule Violations :0
+
+Processing Rule : Silk to Silk (Clearance=3mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mil) (All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=3mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Direct Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (IsVia)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=3mil) (InComponent('U100') OR InComponent('U200')),(InComponent('U100') OR InComponent('U200'))
+Rule Violations :0
+
+Processing Rule : Silk To Solder Mask (Clearance=0mil) (InComponent('D600')),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=1mil) (InComponent('U200')),(InComponent('U200'))
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=30mil) (InNetClass('50_OHM')),(InNamedPolygon('TopGndPour'))
+Rule Violations :0
+
+Processing Rule : Silk primitive without silk layer
+Rule Violations :0
+
+
+Violations Detected : 0
+Time Elapsed        : 00:00:02
