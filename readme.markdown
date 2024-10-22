@@ -1,5 +1,5 @@
 # Planespotter Open ADS-B Receiver
-Planespotter is a side project by [Tom Byrne](https://github.com/ersatzavian). The goal is a small, low-cost ADS-B receiver that includes the RF front end and decoder stages. RF comes in, decoded traffic messages come out over USB. 
+Planespotter is a side project by [Tom Buttner](https://github.com/ersatzavian). The goal is a small, low-cost ADS-B receiver that includes the RF front end and decoder stages. RF comes in, decoded traffic messages come out over USB. 
 
 ## Summary
 The RF front-end on planespotter is heavily based upon the [miniadsb](http://miniadsb.web99.de/homepage/index.php?way=1&site=READOUT&DERNAME=miniADSB%20Tutorial&dm=miniadsb&USER=miniadsb&goto=1&XURL=web99.de&WB=&EXTRAX=X&PIDX=63606) receiver by jetvision. I'm grateful to them for being willing to sell me just one or two SAW filters. They're the best place to find the TA1090EC and TA0232A required by this design unless you're buying thousands of them. 
