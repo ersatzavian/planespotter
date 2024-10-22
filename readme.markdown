@@ -71,7 +71,10 @@ For the actual files used to produce fabricated boards, see the releases folder.
  * Added a comparator and it works too! Verified 4/2/18. Notes and schematic snippet:
  ![notes_0402](images/notes_20180402.JPG)
  * Added a TinyFPGA A1 to my Rev01 prototype as an option for ADS-B decoding; could just send UART info to the STM. Although at that point there's not much point in not just sending it to the USB Host to be plotted or posted to an online service - if the FPGA decoder works out, probably want to switch to an imp for a standalone receiver.  
- ** Tests with mbed Ticker locked the processor up when run faster than 100 kHz.
+  * Tests with mbed Ticker locked the processor up when run faster than 100 kHz.
+ * (10/22/24) Six years later...
+   * I don't know that I really need the FPGA for anything here, the STM32F030K should be able to run its clock up to 48 MHz. ADS-B bitrate is 1 MHz. Brute-force decoding the PPM input with interrupts requires 500ns (2 MHz) precision, which should be fine. [This resource is super helpful](https://mode-s.org/decode/content/introduction.html)
+   * [mbed is being retired](https://os.mbed.com/). I think my next move should be to stand a hello world back up for the STM32F030 using [STM32Cube](https://www.st.com/en/embedded-software/stm32cubef0.html). [These example projects](https://github.com/STMicroelectronics/STM32CubeF0/tree/master/Projects/STM32F0308-Discovery/Examples) may help.
 
 ## License
 
