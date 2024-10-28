@@ -15,7 +15,7 @@ To write a new image to the onboard flash on the STM32F030K6:
 2. Download and install Python, required for [stm32loader](https://github.com/jsnyder/stm32loader).
 3. Download and install [pyserial](https://github.com/pyserial/pyserial), also required for stm32loader. If you have [pip](https://pip.readthedocs.io/en/stable/installing/), you can just `pip install pyserial`.
 4. Make sure your project is generating a binary file. STM32Loader reuqires you load a binary, not an elf:
- ![output binary](images/project_settings_output_bin.PNG)
+ ![output binary](images/project_settings_output_bin.png)
 5. Plug planespotter into your PC over USB. If you're using a VM, make sure to share the FTDI USB-to-Serial Device with the VM from the host machine. 
 6. Find the device name for the usb-serial adapter on your planespotter:
 
