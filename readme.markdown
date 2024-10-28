@@ -14,16 +14,18 @@ To write a new image to the onboard flash on the STM32F030K6:
 1. You may need to install [FTDI's Virtual Com Port Driver](http://www.ftdichip.com/Drivers/VCP.htm) if you're not on OS X. 
 2. Download and install Python, required for [stm32loader](https://github.com/jsnyder/stm32loader).
 3. Download and install [pyserial](https://github.com/pyserial/pyserial), also required for stm32loader. If you have [pip](https://pip.readthedocs.io/en/stable/installing/), you can just `pip install pyserial`.
-4. Plug planespotter into your PC over USB. If you're using a VM, make sure to share the FTDI USB-to-Serial Device with the VM from the host machine. 
-5. Find the device name for the usb-serial adapter on your planespotter:
+4. Make sure your project is generating a binary file. STM32Loader reuqires you load a binary, not an elf:
+ ![output binary](images/project_settings_output_bin.PNG)
+5. Plug planespotter into your PC over USB. If you're using a VM, make sure to share the FTDI USB-to-Serial Device with the VM from the host machine. 
+6. Find the device name for the usb-serial adapter on your planespotter:
 
     ```
     $ ls /dev/tty.usbserial*
     /dev/tty.usbserial-DB00KYMI
     ```
-6. Place the STM32 in Device Firmware Upgrade (DFU) Mode by holding S50 (BOOT0), tapping S20 (RESET_L), and releasing S50.
-7. Make sure planespotter and the binary you are flashing are in the same directory (they are, if you're using a binary provided at planespotter/software/).
-8. Use stm32loader to load the binary onto Planespotter:
+7. Place the STM32 in Device Firmware Upgrade (DFU) Mode by holding S50 (BOOT0), tapping S20 (RESET_L), and releasing S50.
+8. Make sure planespotter and the binary you are flashing are in the same directory (they are, if you're using a binary provided at planespotter/software/).
+9. Use stm32loader to load the binary onto Planespotter:
 
     ```
     $ ./stm32loader.py -e -w -v -p /dev/tty.usbserial-DB00KYMI -b 57600 <image_name>
@@ -34,8 +36,8 @@ To write a new image to the onboard flash on the STM32F030K6:
     Reading: 100%, Time: 0:00:07 |################################################|
     Verification OK
     ```
-9. When programming has finished, tap the Reset button (S20). 
-10. Planespotter will talk over the same serial port you just used to program it as soon as it comes out of reset. Baud is 115200, no flow control. Fire up your favorite terminal emulator or use screen:
+10. When programming has finished, tap the Reset button (S20). 
+11. Planespotter will talk over the same serial port you just used to program it as soon as it comes out of reset. Baud is 115200, no flow control. Fire up your favorite terminal emulator or use screen:
 
     ```
     screen dev/tty.usbserial-DB00KYMI 115200
@@ -75,6 +77,7 @@ For the actual files used to produce fabricated boards, see the releases folder.
  * (10/22/24) Six years later...
    * I don't know that I really need the FPGA for anything here, the STM32F030K should be able to run its clock up to 48 MHz. ADS-B bitrate is 1 MHz. Brute-force decoding the PPM input with interrupts requires 500ns (2 MHz) precision, which should be fine. [This resource is super helpful](https://mode-s.org/decode/content/introduction.html)
    * [mbed is being retired](https://os.mbed.com/). I think my next move should be to stand a hello world back up for the STM32F030 using [STM32Cube](https://www.st.com/en/embedded-software/stm32cubef0.html). [These example projects](https://github.com/STMicroelectronics/STM32CubeF0/tree/master/Projects/STM32F0308-Discovery/Examples) may help.
+ * (10/28/24) Put a blinky image on my prototype with STM32CubeIDE, so I'm ready to get back to firmware. Added notes on configuring project and using the STM32Loader.
 
 ## License
 
